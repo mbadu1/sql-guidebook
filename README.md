@@ -1,7 +1,6 @@
 # sql-guidebook
 # Duke University SQL Guidebook
-**Author:** [Your Name]  
-**Date:** October 19, 2025  
+**Author:** Michael Kofi Badu
 **Database:** SQLite  
 **Purpose:** Personal SQL reference guide demonstrating advanced query techniques
 
@@ -46,22 +45,7 @@ SQLite3 installed
 VSCode with SQLite extension
 Basic understanding of SQL
 
-Installation Steps
 
-Create project directory:
-
-bash   mkdir duke-sql-guidebook
-   cd duke-sql-guidebook
-
-Create database and run setup:
-
-bash   sqlite3 duke_university.db < setup.sql
-   sqlite3 duke_university.db < insert_data.sql
-
-Verify installation:
-
-bash   sqlite3 duke_university.db "SELECT COUNT(*) FROM students;"
-Expected output: 12
 
 SQL Queries
 Query 1: Basic SELECT with Filtering and Sorting
@@ -81,9 +65,8 @@ INNER JOIN majors m ON s.major_id = m.major_id
 WHERE m.major_name = 'Computer Science'
 ORDER BY s.gpa DESC;
 Results:
-student_idfirst_namelast_namegpagraduation_year1007SophiaMoore3.9520271001EmmaJohnson3.8520251004NoahDavis3.452025
-Explanation:
-This query joins the students table with the majors table to filter only Computer Science students. The INNER JOIN ensures we only get students with a valid major. Results are sorted by GPA in descending order to show top performers first.
+image.png
+
 
 Query 2: Aggregation with GROUP BY and HAVING
 Business Question: Which departments have more than 2 students and what's their average GPA?
