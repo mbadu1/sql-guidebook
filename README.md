@@ -360,19 +360,17 @@ Results:
 
 
 
-
-
 #### Key Learnings
-##### Advanced SQL Features 
 
-JOIN Operations
+
+##### JOIN Operations
 
 INNER JOIN for matching records
 LEFT JOIN for including non-matches
 Multiple table joins in single query
 
 
-Window Functions
+##### Window Functions
 
 RANK() for competitive rankings
 ROW_NUMBER() for sequential numbering
@@ -380,14 +378,14 @@ PARTITION BY for group-wise operations
 LEAD/LAG for temporal analysis
 
 
-Common Table Expressions (CTEs)
+##### Common Table Expressions (CTEs)
 
 WITH clause for query organization
 Multiple CTEs in single query
 Improved readability and maintenance
 
 
-String Functions
+##### String Functions
 
 SUBSTR for extracting substrings
 INSTR for finding positions
@@ -395,39 +393,25 @@ UPPER/LOWER for case conversion
 Concatenation with ||
 
 
-Date Functions
+##### Date Functions
 
 DATE for date manipulation
 
 
-Set Operations
+###### Set Operations
 
 UNION for combining results
 INTERSECT for common elements
 
 
-NULL Handling
+##### NULL Handling
 
 COALESCE for default values
 IS NULL checks
 LEFT JOIN for optional data
 
 
-
-
-Performance Optimization Tips
-
-Indexing: Create indexes on frequently queried columns
-
-sql   CREATE INDEX idx_students_major ON students(major_id);
-   CREATE INDEX idx_enrollments_student ON enrollments(student_id);
-
-Query Planning: Use EXPLAIN to understand query execution
-
-sql   EXPLAIN QUERY PLAN SELECT...
-```
-
-3. **Limit Results:** Use LIMIT for large datasets during testing
+ **Limit Results:** Use LIMIT for large datasets during testing
 
 ---
 
@@ -455,7 +439,7 @@ sql   EXPLAIN QUERY PLAN SELECT...
 - [ ] `duke_university.db` (your SQLite database)
 - [ ] `setup.sql` (table creation script)
 - [ ] `insert_data.sql` (data population script)
-- [ ] `queries.sql` (all 11 queries)
+- [ ] `queries.sql` (all 10 queries)
 - [ ] `images ` (all screenshots of outputs during exercise)
 
 
