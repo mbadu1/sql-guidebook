@@ -1,5 +1,5 @@
 # sql-guidebook
-# Duke University SQL Guidebook
+# SQL Guidebook
 **Author:** Michael Kofi Badu
 **Database:** SQLite  
 **Purpose:** Personal SQL reference guide demonstrating advanced query techniques
@@ -58,9 +58,9 @@ Results:
 Purpose: Find all computer science students sorted by gpa.
 
 
-Query 2: Aggregation with GROUP BY and HAVING
+#### Query 2: Aggregation with GROUP BY and HAVING
 
-Question 2 : Which departments have more than 2 students and what's their average GPA?
+#### Question 2 : Which departments have more than 2 students and what's their average GPA?
 
 SQL Concepts: GROUP BY, HAVING, COUNT, AVG, MIN, MAX, ROUND
 
@@ -86,9 +86,9 @@ Results:
 Purpose: This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
 
 
-Query 3: Multiple JOINS (INNER, LEFT JOIN)
+#### Query 3: Multiple JOINS (INNER, LEFT JOIN)
 
-Question 3: Show all students with their enrolled courses and grades, including students who haven't received grades yet.
+#### Question 3: Show all students with their enrolled courses and grades, including students who haven't received grades yet.
 
 SQL Concepts: INNER JOIN, LEFT JOIN, multiple table joins
 
