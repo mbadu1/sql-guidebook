@@ -30,9 +30,9 @@ This database models a university system with students, courses, enrollments, gr
 
 
 ### SQL Queries
-Query 1: Basic SELECT with Filtering and Sorting
+## Query 1: Basic SELECT with Filtering and Sorting
 
-Question 1: Who are all the Computer Science majors, ordered by GPA?
+## Question 1: Who are all the Computer Science majors, ordered by GPA?
 
 SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
 
@@ -55,9 +55,7 @@ Results:
 
 ![alt text](image.png)
 
-Purpose: 
-
-Find all computer science students sorted by gpa.
+Purpose: Find all computer science students sorted by gpa.
 
 
 Query 2: Aggregation with GROUP BY and HAVING
@@ -85,9 +83,7 @@ Results:
 ![alt text](<image 1.png>)
 
 
-Purpose:
-
-This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
+Purpose: This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
 
 
 Query 3: Multiple JOINS (INNER, LEFT JOIN)
