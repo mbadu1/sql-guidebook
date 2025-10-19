@@ -29,7 +29,6 @@ This database models a university system with students, courses, enrollments, gr
 - `club_memberships` - Student club participation
 
 ### Schema Diagram
-```
 students ──┬── enrollments ── grades
            │       │
            │       └── courses
@@ -47,7 +46,7 @@ Basic understanding of SQL
 
 
 
-SQL Queries
+### SQL Queries
 Query 1: Basic SELECT with Filtering and Sorting
 Business Question: Who are all the Computer Science majors, ordered by GPA?
 SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
@@ -65,8 +64,7 @@ INNER JOIN majors m ON s.major_id = m.major_id
 WHERE m.major_name = 'Computer Science'
 ORDER BY s.gpa DESC;
 Results:
-image.png
-
+![alt text](image.png)
 
 Query 2: Aggregation with GROUP BY and HAVING
 Business Question: Which departments have more than 2 students and what's their average GPA?
