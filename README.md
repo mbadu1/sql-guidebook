@@ -29,9 +29,12 @@ This database models a university system with students, courses, enrollments, gr
 - `clubs` - Student organizations
 - `club_memberships` - Student club participation
 
-Results
+Results samples:
 
 ![alt text](<Tables image.png>)
+
+![alt text](<Table image2.png>)
+
 
 ### SQL Queries
 #### Query 1: Basic SELECT with Filtering and Sorting
