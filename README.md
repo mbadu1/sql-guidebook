@@ -75,7 +75,10 @@ ORDER BY s.gpa DESC;
 Results:
 ![alt text](<query1 image.png>)
 
-Purpose: Find all computer science students sorted by gpa.
+Explanation: Find all computer science students sorted by gpa. 
+This query joins the students table with the majors table to filter only Computer Science students. 
+The INNER JOIN ensures we only get students with a valid major. Results are sorted by GPA in descending order to show top performers first.
+
 
 
 #### Query 2: Aggregation with GROUP BY and HAVING
@@ -103,7 +106,7 @@ Results:
 ![alt text](<query2 image.png>)
 
 
-Purpose: This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
+Explanation: This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
 
 
 #### Query 3: Multiple JOINS (INNER, LEFT JOIN)
@@ -135,8 +138,10 @@ ORDER BY s.last_name, c.course_id;
 
 Results:
 ![alt text](<query3 image.png>)
-Purpose: 
-Complete student academic record with course enrollments and grades
+Explanation: 
+Complete student academic record with course enrollments and grades. 
+This query demonstrates the power of joining multiple tables to create a comprehensive view. We use INNER JOINs for students, enrollments, and courses because we only want records where these relationships exist. However, we use a LEFT JOIN for grades because some enrollments might not have grades yet, and we still want to see those enrollments. The || operator concatenates first and last names into a single field. This query pattern is extremely common in academic systems for generating transcript-like reports. The ORDER BY clause sorts first by last name, then by course ID for organized output.
+
 
 
 #### QUERY 4: CASE WHEN for Data Transformation
@@ -165,7 +170,7 @@ Results:
 
 ![alt text](<query4 image.png>)
 
-Purpose: Categorize students by academic performance
+Explanation: Categorize students by academic performance. The CASE WHEN statement is SQL's version of if-else logic, allowing us to transform data dynamically. Here, we categorize students into performance tiers based on their GPA ranges. The CASE expression is evaluated for each row, and the appropriate label is assigned. GROUP BY then groups students by their assigned performance level. GROUP_CONCAT is a powerful aggregation function that combines multiple text values into a single comma-separated string, making it easy to see which students fall into each category. This type of query is valuable for creating summary reports, dashboards, and identifying students who may need academic support or recognition.
 
 
 #### Query 5: Window Functions - RANK and ROW_NUMBER
@@ -192,7 +197,7 @@ Results:
 
 ![alt text](<query5 image.png>)
 
-Purpose: Rank students within their graduation year
+Explanation: Rank students within their graduation year.Window functions are powerful analytical tools that perform calculations across a set of rows related to the current row. Unlike GROUP BY which collapses rows, window functions preserve individual rows while adding calculated values. PARTITION BY divides the data into windows (here, by graduation year), and calculations are performed within each partition. RANK() assigns ranks but leaves gaps when there are ties (e.g., 1, 2, 2, 4). ROW_NUMBER() assigns unique sequential numbers regardless of ties. DENSE_RANK() assigns ranks without gaps even with ties (e.g., 1, 2, 2, 3).
 
 
 #### Query 6: Common Table Expressions (WITH)
@@ -233,7 +238,8 @@ Results
 
 ![alt text](<query6 image.png>)
 
-Purpose: Identify students with above-average course loads
+Explanation: Identify students with above-average course loads. Common Table Expressions (CTEs) make complex queries more readable and maintainable by breaking them into logical, named steps. Think of CTEs as temporary result sets that exist only for the duration of the query. In this query, we first create the CourseLoads CTE which calculates each student's course count and total credits. Then we create Average Course Load CTE which calculates the average across all students. Finally, we join these CTEs together using CROSS JOIN (which creates a cartesian product, but since AverageCourseLoad has only one row, each student row gets paired with the average). This structure makes the query much easier to understand, test, and modify than nested subqueries. CTEs are particularly valuable for complex analytical queries and are widely used in data analysis and reporting.
+
 
 #### QUERY 7: UPDATE with Calculated Values
 
@@ -268,7 +274,9 @@ Results:
 
 ![alt text](<query7 image.png>)
 
-Purpose: Recalculate and update student GPAs based on grades
+Explanation: Recalculate and update student GPAs based on grades
+The UPDATE statement modifies existing data in the database. This query demonstrates a correlated subquery, where the subquery references the outer query's table (students.student_id). For each student, the subquery calculates their actual GPA by averaging their grade points from all completed courses. The WHERE clause in the UPDATE ensures we only update students who have grades (avoiding NULL values).
+
 
 #### QUERY 8: String Manipulation Functions
 
@@ -301,7 +309,7 @@ LIMIT 5
 Results
 ![alt text](<query8 image.png>)
 
-Purpose: Demonstrate string functions for data cleaning and formatting
+Explanation: Demonstrate string functions for data cleaning and formatting. String manipulation functions are essential for data cleaning, formatting, and transformation. SUBSTR extracts portions of text (parameters: string, start position, optional length). INSTR finds the position of a substring within a string. LENGTH returns character count. UPPER and LOWER change case. 
 
 
 #### QUERY 9: UNION for Combining Result Sets
@@ -340,7 +348,8 @@ Results:
 
 ![alt text](<query9 image.png>)
 
-Purpose: Combine different entity types into a unified view
+Explanation: Combine different entity types into a unified view. UNION combines the results of two or more SELECT statements into a single result set. The key requirement is that all SELECT statements must have the same number of columns with compatible data types. UNION automatically removes duplicate rows (use UNION ALL to keep duplicates). In this query, we combine student and professor data into a unified directory. 
+
 
 
 #### QUERY 10: NULL Handling with COALESCE
@@ -373,7 +382,7 @@ Results:
 ![alt text](<query10 image.png>)
 
 
-
+Explanation: COALESCE is an essential function for handling NULL values in SQL, which occur when data is missing or relationships don't exist. COALESCE takes multiple arguments and returns the first non-NULL value. In this query, we use LEFT JOINs which can produce NULL values when a student isn't in any club. Instead of displaying NULL (which is confusing to end users), we provide meaningful default values: "No Club Membership" for students without clubs, "N/A" for missing positions, and 0 for missing budgets. 
 
 
 
