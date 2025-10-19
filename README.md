@@ -29,6 +29,9 @@ This database models a university system with students, courses, enrollments, gr
 - `clubs` - Student organizations
 - `club_memberships` - Student club participation
 
+Results
+![alt text](Tables_Image.png)
+
 
 ### SQL Queries
 #### Query 1: Basic SELECT with Filtering and Sorting
@@ -208,6 +211,7 @@ ORDER BY cl.course_count DESC;
 Results
 ![alt text](<query6 image.png>)
 
+Purpose: Identify students with above-average course loads
 
 
 
