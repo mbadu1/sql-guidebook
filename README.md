@@ -1,5 +1,6 @@
 # sql-guidebook
-# SQL Guidebook
+
+
 **Author:** Michael Kofi Badu
 **Database:** SQLite  
 **Purpose:** Personal SQL reference guide demonstrating advanced query techniques
@@ -121,6 +122,32 @@ Purpose:
 Complete student academic record with course enrollments and grades
 
 
+#### QUERY 4: CASE WHEN for Data Transformation
+
+#### Question: Classify students by GPA performance level and count each category.
+
+SQL Concepts: CASE WHEN, GROUP BY, COUNT
+
+Query:
+SELECT 
+    CASE 
+        WHEN s.gpa >= 3.8 THEN 'Excellent'
+        WHEN s.gpa >= 3.5 THEN 'Good'
+        WHEN s.gpa >= 3.0 THEN 'Satisfactory'
+        ELSE 'Needs Improvement'
+    END as performance_level,
+    COUNT(*) as student_count,
+    ROUND(AVG(s.gpa), 2) as avg_gpa,
+    GROUP_CONCAT(s.first_name || ' ' || s.last_name, ', ') as students
+FROM students s
+GROUP BY performance_level
+ORDER BY avg_gpa DESC;
+
+Results
+
+![alt text](<image 3.png>)
+
+Purpose: Categorize students by academic performance
 
 
 
