@@ -248,9 +248,42 @@ FROM students
 WHERE student_id IN (1001, 1002, 1003);
 
 Results:
+
 ![alt text](<query7 image.png>)
 
 Purpose: Recalculate and update student GPAs based on grades
+
+#### QUERY 8: String Manipulation Functions
+
+#### Question 8: Format student emails and extract domain, create display names.
+
+SQL Concept: Concepts: UPPER, LOWER, SUBSTR, INSTR, LENGTH, REPLACE, TRIM
+
+Query:
+
+SELECT 
+    s.student_id,
+    s.first_name || ' ' || s.last_name as full_name,
+    
+    UPPER(s.last_name) || ', ' || s.first_name as display_name,
+    
+    s.email as original_email,
+    SUBSTR(s.email, 1, INSTR(s.email, '@') - 1) as username,
+    SUBSTR(s.email, INSTR(s.email, '@') + 1) as domain,
+    
+    LENGTH(s.email) as email_length,
+    
+    LOWER(s.first_name) || '.' || LOWER(s.last_name) || '@students.duke.edu' as alt_email,
+    
+    SUBSTR(s.first_name, 1, 1) || SUBSTR(s.last_name, 1, 1) as initials
+    
+FROM students s
+ORDER BY s.last_name
+LIMIT 5
+
+Results
+![alt text](<query8 image.png>)
+
 
 
 
