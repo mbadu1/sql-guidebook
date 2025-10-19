@@ -32,7 +32,7 @@ This database models a university system with students, courses, enrollments, gr
 ### SQL Queries
 Query 1: Basic SELECT with Filtering and Sorting
 
- Question: Who are all the Computer Science majors, ordered by GPA?
+Question 1: Who are all the Computer Science majors, ordered by GPA?
 
 SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
 
@@ -57,7 +57,7 @@ Results:
 
 Query 2: Aggregation with GROUP BY and HAVING
 
-Question: Which departments have more than 2 students and what's their average GPA?
+Question 2 : Which departments have more than 2 students and what's their average GPA?
 
 SQL Concepts: GROUP BY, HAVING, COUNT, AVG, MIN, MAX, ROUND
 
@@ -81,7 +81,53 @@ Results:
 
 
 Explanation:
+
 This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
+
+
+Query 3: Multiple JOINS (INNER, LEFT JOIN)
+
+Question 3: Show all students with their enrolled courses and grades, including students who haven't received grades yet.
+
+SQL Concepts: INNER JOIN, LEFT JOIN, multiple table joins
+
+Query:
+SELECT 
+    s.first_name || ' ' || s.last_name as student_name,
+
+    s.graduation_year,
+
+    c.course_id,
+
+    c.course_name,
+
+    e.semester,
+
+    g.grade,
+
+    g.grade_points
+
+FROM students s
+
+INNER JOIN enrollments e ON s.student_id = e.student_id
+
+INNER JOIN courses c ON e.course_id = c.course_id
+
+LEFT JOIN grades g ON e.enrollment_id = g.enrollment_id
+
+ORDER BY s.last_name, c.course_id;
+
+
+Results
+
+![alt text](<image 2.png>)
+
+
+
+
+
+
+
 
 
 
