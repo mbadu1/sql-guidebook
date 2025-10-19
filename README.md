@@ -30,6 +30,7 @@ This database models a university system with students, courses, enrollments, gr
 - `club_memberships` - Student club participation
 
 Results
+
 ![alt text](<Tables image.png>)
 
 ### SQL Queries
@@ -144,6 +145,7 @@ GROUP BY performance_level
 ORDER BY avg_gpa DESC;
 
 Results:
+
 ![alt text](<query4 image.png>)
 
 Purpose: Categorize students by academic performance
@@ -170,7 +172,9 @@ INNER JOIN majors m ON s.major_id = m.major_id
 ORDER BY s.graduation_year, gpa_rank;
 
 Results:
+
 ![alt text](<query5 image.png>)
+
 Purpose: Rank students within their graduation year
 
 
@@ -179,6 +183,7 @@ Purpose: Rank students within their graduation year
 #### Question 6: Find students who are taking more courses than the average and show their course load.
 
 SQL Concept: WITH (CTE), subqueries, aggregation
+
 Query:
 
 WITH CourseLoads AS (
@@ -208,10 +213,44 @@ WHERE cl.course_count > acl.avg_courses
 ORDER BY cl.course_count DESC;
 
 Results
+
 ![alt text](<query6 image.png>)
 
 Purpose: Identify students with above-average course loads
 
+#### QUERY 7: UPDATE with Calculated Values
+
+#### Question 7: Update GPA for students based on their latest grades.
+
+SQL Concept: Concepts: UPDATE, subquery, aggregation
+
+Query:
+
+SELECT student_id, first_name, last_name, gpa as old_gpa
+FROM students
+WHERE student_id IN (1001, 1002, 1003);
+
+UPDATE students
+SET gpa = (
+    SELECT ROUND(AVG(g.grade_points), 2)
+    FROM enrollments e
+    INNER JOIN grades g ON e.enrollment_id = g.enrollment_id
+    WHERE e.student_id = students.student_id
+)
+WHERE student_id IN (
+    SELECT DISTINCT e.student_id
+    FROM enrollments e
+    INNER JOIN grades g ON e.enrollment_id = g.enrollment_id
+);
+
+SELECT student_id, first_name, last_name, gpa as new_gpa
+FROM students
+WHERE student_id IN (1001, 1002, 1003);
+
+Results:
+![alt text](<query7 image.png>)
+
+Purpose: Recalculate and update student GPAs based on grades
 
 
 
