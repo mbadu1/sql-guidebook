@@ -362,8 +362,8 @@ Results:
 
 
 
-Key Learnings
-Advanced SQL Features 
+#### Key Learnings
+##### Advanced SQL Features 
 
 JOIN Operations
 
