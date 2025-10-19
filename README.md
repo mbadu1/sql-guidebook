@@ -35,6 +35,7 @@ Query 1: Basic SELECT with Filtering and Sorting
 Business Question: Who are all the Computer Science majors, ordered by GPA?
 
 SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
+
 Query:
 sqlSELECT 
     s.student_id,

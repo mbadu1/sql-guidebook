@@ -21,9 +21,7 @@ CREATE TABLE majors (
     required_credits INTEGER NOT NULL
 );
 
--- ============================================
--- TABLE 3: COURSES
--- ============================================
+
 -- Stores course information
 CREATE TABLE courses (
     course_id TEXT PRIMARY KEY,
@@ -34,9 +32,7 @@ CREATE TABLE courses (
     semester TEXT NOT NULL
 );
 
--- ============================================
--- TABLE 4: ENROLLMENTS
--- ============================================
+
 -- Links students to courses
 CREATE TABLE enrollments (
     enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -48,9 +44,7 @@ CREATE TABLE enrollments (
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 
--- ============================================
--- TABLE 5: GRADES
--- ============================================
+
 -- Stores grades for student enrollments
 CREATE TABLE grades (
     grade_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -60,9 +54,7 @@ CREATE TABLE grades (
     FOREIGN KEY (enrollment_id) REFERENCES enrollments(enrollment_id)
 );
 
--- ============================================
--- TABLE 6: CLUBS
--- ============================================
+
 -- Stores student organization information
 CREATE TABLE clubs (
     club_id INTEGER PRIMARY KEY,
@@ -72,9 +64,8 @@ CREATE TABLE clubs (
     budget REAL
 );
 
--- ============================================
--- TABLE 7: CLUB_MEMBERSHIPS
--- ============================================
+
+
 -- Links students to clubs
 CREATE TABLE club_memberships (
     membership_id INTEGER PRIMARY KEY AUTOINCREMENT,
