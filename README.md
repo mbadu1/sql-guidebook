@@ -38,7 +38,7 @@ SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
 
 Query:
 
-sqlSELECT 
+SELECT 
     s.student_id,
     s.first_name,
     s.last_name,
@@ -52,6 +52,7 @@ WHERE m.major_name = 'Computer Science'
 ORDER BY s.gpa DESC;
 
 Results:
+
 ![alt text](image.png)
 
 Query 2: Aggregation with GROUP BY and HAVING
@@ -62,7 +63,7 @@ SQL Concepts: GROUP BY, HAVING, COUNT, AVG, MIN, MAX, ROUND
 
 Query:
 
-sqlSELECT 
+SELECT 
     m.department,
     COUNT(s.student_id) as student_count,
     ROUND(AVG(s.gpa), 2) as avg_gpa,
@@ -75,6 +76,7 @@ HAVING COUNT(s.student_id) > 2
 ORDER BY avg_gpa DESC;
 
 Results:
+
 ![alt text](<image 1.png>)
 
 
