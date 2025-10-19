@@ -28,27 +28,12 @@ This database models a university system with students, courses, enrollments, gr
 - `clubs` - Student organizations
 - `club_memberships` - Student club participation
 
-### Schema Diagram
-students ──┬── enrollments ── grades
-           │       │
-           │       └── courses
-           │
-           ├── majors
-           │
-           └── club_memberships ── clubs
-
-Setup Instructions
-Prerequisites
-
-SQLite3 installed
-VSCode with SQLite extension
-Basic understanding of SQL
-
-
 
 ### SQL Queries
 Query 1: Basic SELECT with Filtering and Sorting
+
 Business Question: Who are all the Computer Science majors, ordered by GPA?
+
 SQL Concepts: SELECT, FROM, WHERE, INNER JOIN, ORDER BY
 Query:
 sqlSELECT 
@@ -63,6 +48,7 @@ FROM students s
 INNER JOIN majors m ON s.major_id = m.major_id
 WHERE m.major_name = 'Computer Science'
 ORDER BY s.gpa DESC;
+
 Results:
 ![alt text](image.png)
 
