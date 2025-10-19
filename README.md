@@ -9,7 +9,7 @@
 
 ## Table of Contents
 1. [Database Schema](#database-schema)
-2. [Setup Instructions](#setup-instructions)
+2. [Setup](#setup)
 3. [SQL Queries](#sql-queries)
 4. [Key Learnings](#key-learnings)
 
@@ -34,6 +34,20 @@ Results samples:
 ![alt text](<Tables image.png>)
 
 ![alt text](<Table image2.png>)
+
+## Setup
+**SQLite3** - Database engine
+(verify with `sqlite3 --version`)
+**SQLite Extension for VSCode** 
+  - Extension ID: `alexcvzz.vscode-sqlite`
+
+1. Clone or download this repository to your local machine:
+2. Ensure you have the following files in your project directory
+3. Create the Database
+4. Verify Installation
+5. Configure VSCode
+6. Run Queries
+
 
 
 ### SQL Queries
@@ -416,15 +430,13 @@ LEFT JOIN for optional data
 
  **Limit Results:** Use LIMIT for large datasets during testing
 
----
 
-## Future Enhancements
 
-- [ ] Add triggers for automatic GPA calculation
-- [ ] Implement views for common queries
-- [ ] Create stored procedures (if supported)
-- [ ] Add transaction examples
-- [ ] Include data validation constraints
+
+
+
+
+
 
 ---
 
@@ -436,7 +448,7 @@ LEFT JOIN for optional data
 
 ---
 
-## Submission Checklist
+## Guidebook Checklist
 
  **Database Files:**
 - [ ] `duke_university.db` (your SQLite database)
