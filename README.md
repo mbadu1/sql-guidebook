@@ -55,6 +55,11 @@ Results:
 
 ![alt text](image.png)
 
+Purpose: 
+
+Find all computer science students sorted by gpa.
+
+
 Query 2: Aggregation with GROUP BY and HAVING
 
 Question 2 : Which departments have more than 2 students and what's their average GPA?
@@ -80,7 +85,7 @@ Results:
 ![alt text](<image 1.png>)
 
 
-Explanation:
+Purpose:
 
 This query demonstrates aggregation functions. GROUP BY organizes students by department, while HAVING filters to show only departments with more than 2 students. The aggregate functions (COUNT, AVG, MIN, MAX) provide statistical summaries.
 
@@ -92,21 +97,15 @@ Question 3: Show all students with their enrolled courses and grades, including 
 SQL Concepts: INNER JOIN, LEFT JOIN, multiple table joins
 
 Query:
+
 SELECT 
-    s.first_name || ' ' || s.last_name as student_name,
-
-    s.graduation_year,
-
-    c.course_id,
-
-    c.course_name,
-
-    e.semester,
-
-    g.grade,
-
-    g.grade_points
-
+s.first_name || ' ' || s.last_name as student_name,
+s.graduation_year,
+c.course_id,
+c.course_name,
+e.semester,
+g.grade,
+g.grade_points
 FROM students s
 
 INNER JOIN enrollments e ON s.student_id = e.student_id
@@ -122,8 +121,8 @@ Results
 
 ![alt text](<image 2.png>)
 
-
-
+Purpose: 
+Complete student academic record with course enrollments and grades
 
 
 
